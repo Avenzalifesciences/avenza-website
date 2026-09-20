@@ -1,7 +1,7 @@
 # Avenza Technologies LLC — Website
 
-Static marketing site for Avenza Technologies LLC, a South Carolina-based
-sourcing and supply partner for state government and institutional contracts.
+Static marketing site for Avenza Technologies LLC, a sourcing and supply
+partner for state government and institutional contracts.
 
 Live at **https://avenzatechnologies.com** (GitHub Pages).
 
