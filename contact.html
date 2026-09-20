@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Avenza Technologies LLC</title>
+<meta name="description" content="Contact Avenza Technologies LLC about a contract opportunity, quote request, or supply requirement in South Carolina.">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html">
+      <span class="logo-mark" aria-hidden="true">AT</span>
+      Avenza Technologies
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">Menu</button>
+    <nav class="site-nav" id="site-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+      <a class="btn" href="contact.html">Request a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Contact</span>
+      <h1>Tell us what you need sourced</h1>
+      <p>Have a project, solicitation, or purchase order? Send the details and we will respond with pricing and availability.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="split">
+
+        <div>
+          <h2 style="margin:0 0 20px; font-size:1.3rem;">Send a message</h2>
+
+          <!-- TODO: this form has no backend yet. Set `action` to a form handler
+               (Formspree, Netlify Forms, or your own endpoint) before going live. -->
+          <form class="form" method="post" action="#">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="organization">Organization</label>
+              <input type="text" id="organization" name="organization" autocomplete="organization">
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="topic">How can we help?</label>
+              <select id="topic" name="topic">
+                <option value="quote">Request a quote</option>
+                <option value="contract">Contract opportunity</option>
+                <option value="supplier">Supplier inquiry</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Details</label>
+              <textarea id="message" name="message" placeholder="Line items, quantities, specifications, delivery window..." required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+            <p class="form-note">We typically respond within one business day.</p>
+          </form>
+        </div>
+
+        <div>
+          <h2 style="margin:0 0 20px; font-size:1.3rem;">Reach us directly</h2>
+          <ul class="contact-list">
+            <li>
+              <strong>Email</strong>
+              <!-- TODO: replace with the real company email address -->
+              <a href="mailto:info@example.com">info@example.com</a>
+            </li>
+            <li>
+              <strong>Phone</strong>
+              <!-- TODO: replace with the real company phone number -->
+              <a href="tel:+10000000000">(000) 000-0000</a>
+            </li>
+            <li>
+              <strong>Locations</strong>
+              Charleston, South Carolina<br>
+              Blythewood, South Carolina
+            </li>
+            <li>
+              <strong>Hours</strong>
+              Monday &ndash; Friday, 8:00 AM &ndash; 5:00 PM ET
+            </li>
+          </ul>
+
+          <dl class="facts" style="margin-top:28px;">
+            <dt>Entity</dt><dd>Avenza Technologies LLC</dd>
+            <dt>Vendor status</dt><dd>Registered SC state vendor</dd>
+            <dt>NAICS</dt><dd>425120</dd>
+          </dl>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="index.html">
+          <span class="logo-mark" aria-hidden="true">AT</span>
+          Avenza Technologies
+        </a>
+        <p>A South Carolina-based sourcing and supply partner for state government and institutional contracts.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li>Avenza Technologies LLC</li>
+          <li>Charleston &amp; Blythewood, SC</li>
+          <li>NAICS 425120</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Avenza Technologies LLC. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
