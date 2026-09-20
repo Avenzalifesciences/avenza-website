@@ -8,17 +8,32 @@ Live at **https://avenzatechnologies.com** (GitHub Pages).
 ## Structure
 
 ```
-index.html            Home
-about.html            About
-services.html         Services
-contact.html          Contact
-assets/css/styles.css Shared styles (light + dark themes)
-assets/js/main.js     Mobile nav toggle, footer year
-CNAME                 Custom domain for GitHub Pages
-.nojekyll             Serve files as-is, skip Jekyll processing
+index.html             Home            ->  /
+about/index.html       About           ->  /about/
+services/index.html    Services        ->  /services/
+contact/index.html     Contact         ->  /contact/
+about.html             redirect stub   ->  /about/
+services.html          redirect stub   ->  /services/
+contact.html           redirect stub   ->  /contact/
+assets/css/styles.css  Shared styles (light + dark themes)
+assets/js/main.js      Mobile nav toggle, footer year
+CNAME                  Custom domain for GitHub Pages
+.nojekyll              Serve files as-is, skip Jekyll processing
 ```
 
 No build step. Plain HTML, CSS, and JS — edit and commit.
+
+**Pages live in directories** so URLs have no `.html` extension. A new page
+means a new folder with an `index.html` in it.
+
+**Internal links and asset paths are root-absolute** (`/about/`,
+`/assets/css/styles.css`), because pages sit at different depths and a
+relative path would resolve differently from each one. This is correct for
+the custom domain, which is the only way the site is reached — it does not
+work from the `username.github.io/avenza-website/` fallback URL.
+
+The three `*.html` files at the root are redirect stubs preserving the
+original URLs. Safe to delete once nothing links to them.
 
 ## Local preview
 
