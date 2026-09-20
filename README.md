@@ -35,9 +35,12 @@ Pushing to `main` publishes automatically via GitHub Pages
 
 ## Outstanding
 
-- [ ] Point the contact form `action` at a real handler (Formspree, etc.) —
-      it currently posts to `#` and discards submissions
 - [ ] Confirm the company facts on `about.html` are current
+
+The contact page has no form. Static hosting cannot process form POSTs
+(GitHub Pages returns 405), so the page uses direct `mailto:` and `tel:`
+links instead. If a form is ever needed, it requires a third-party handler
+such as Formspree or FormSubmit.
 
 ## Contact details
 

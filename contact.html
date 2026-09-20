@@ -43,43 +43,27 @@
       <div class="split">
 
         <div>
-          <h2 style="margin:0 0 20px; font-size:1.3rem;">Send a message</h2>
+          <h2 style="margin:0 0 16px; font-size:1.3rem;">Send us the details</h2>
+          <p style="color:var(--text-muted); margin:0 0 24px;">
+            Email us directly and we will respond with pricing and availability,
+            typically within one business day.
+          </p>
 
-          <!-- TODO: this form has no backend yet. Set `action` to a form handler
-               (Formspree, Netlify Forms, or your own endpoint) before going live. -->
-          <form class="form" method="post" action="#">
-            <div class="field">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" autocomplete="name" required>
-            </div>
-            <div class="field">
-              <label for="organization">Organization</label>
-              <input type="text" id="organization" name="organization" autocomplete="organization">
-            </div>
-            <div class="field">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" autocomplete="email" required>
-            </div>
-            <div class="field">
-              <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone" autocomplete="tel">
-            </div>
-            <div class="field">
-              <label for="topic">How can we help?</label>
-              <select id="topic" name="topic">
-                <option value="quote">Request a quote</option>
-                <option value="contract">Contract opportunity</option>
-                <option value="supplier">Supplier inquiry</option>
-                <option value="other">Something else</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="message">Details</label>
-              <textarea id="message" name="message" placeholder="Line items, quantities, specifications, delivery window..." required></textarea>
-            </div>
-            <button type="submit" class="btn">Send Message</button>
-            <p class="form-note">We typically respond within one business day.</p>
-          </form>
+          <div class="btn-row" style="margin-bottom:28px;">
+            <a class="btn" href="mailto:info@avenzatechnologies.com?subject=Quote%20request%20%E2%80%93%20Avenza%20Technologies">Email Us</a>
+            <a class="btn btn-ghost" href="tel:+17204167970">Call (720) 416-7970</a>
+          </div>
+
+          <h3 style="font-size:1.05rem; margin:0 0 10px;">What to include</h3>
+          <p style="color:var(--text-muted); margin:0 0 12px;">
+            The more of this you can send up front, the faster we can quote:
+          </p>
+          <ul style="color:var(--text-muted); margin:0; padding-left:20px; display:grid; gap:6px;">
+            <li>Line items and quantities</li>
+            <li>Specifications, part numbers, or the solicitation document</li>
+            <li>Delivery location and required date</li>
+            <li>Your organization and a contact number</li>
+          </ul>
         </div>
 
         <div>
