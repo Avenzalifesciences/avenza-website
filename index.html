@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avenza Technologies LLC</title>
+<meta name="description" content="Avenza Technologies LLC — sourcing and supply partner for state government and institutional contracts based in South Carolina.">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-alt: #f5f7fa;
+    --text: #1a2130;
+    --text-muted: #5b6472;
+    --accent: #1e4d8c;
+    --accent-dark: #143766;
+    --border: #e2e6ec;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12161f;
+      --bg-alt: #191f2b;
+      --text: #eef1f6;
+      --text-muted: #a3adbd;
+      --accent: #6fa3e0;
+      --accent-dark: #8fbcf0;
+      --border: #2a3242;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12161f;
+    --bg-alt: #191f2b;
+    --text: #eef1f6;
+    --text-muted: #a3adbd;
+    --accent: #6fa3e0;
+    --accent-dark: #8fbcf0;
+    --border: #2a3242;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  header {
+    padding: 20px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+  nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 0.95rem;
+  }
+  nav a:hover { color: var(--accent); }
+  .hero {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 64px 16px 48px;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+  }
+  .hero p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 620px;
+    margin: 0 auto 28px;
+  }
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    padding: 12px 26px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .btn:hover { background: var(--accent-dark); }
+  section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 48px 16px;
+  }
+  section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .card h3 {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+  }
+  .card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  @media (max-width: 640px) {
+    .about-grid { grid-template-columns: 1fr; }
+  }
+  dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 16px;
+    font-size: 0.95rem;
+    margin: 0;
+  }
+  dt { color: var(--text-muted); }
+  dd { margin: 0; }
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 16px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+  #contact form {
+    display: grid;
+    gap: 14px;
+    max-width: 480px;
+  }
+  input, textarea {
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font: inherit;
+  }
+  textarea { min-height: 110px; resize: vertical; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Avenza Technologies</div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>Sourcing and supply partner for government &amp; institutional contracts</h1>
+  <p>Avenza Technologies LLC is a South Carolina&#8211;based vendor supplying equipment, supplies, and materials to state and institutional buyers.</p>
+  <a class="btn" href="#contact">Get in touch</a>
+</div>
+
+<section id="about">
+  <h2>About Avenza Technologies</h2>
+  <div class="about-grid">
+    <p>
+      Avenza Technologies LLC works with state agencies and institutions across South Carolina to source,
+      coordinate, and deliver the equipment and supplies their contracts require. We build relationships with
+      manufacturers and distributors to provide reliable pricing, dependable delivery, and responsive service
+      on every order.
+    </p>
+    <dl>
+      <dt>Entity</dt><dd>Avenza Technologies LLC</dd>
+      <dt>Based in</dt><dd>Charleston &amp; Blythewood, South Carolina</dd>
+      <dt>Vendor status</dt><dd>Registered South Carolina state vendor</dd>
+      <dt>Focus</dt><dd>Wholesale trade &amp; contract fulfillment (NAICS 425120)</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="services">
+  <h2>What We Do</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Equipment &amp; Supply Sourcing</h3>
+      <p>Sourcing and coordinating equipment and materials to meet contract specifications and budgets.</p>
+    </div>
+    <div class="card">
+      <h3>Government Contract Fulfillment</h3>
+      <p>Reliable fulfillment for state and institutional purchase orders, including recurring and multi-year contracts.</p>
+    </div>
+    <div class="card">
+      <h3>Vendor &amp; Supplier Relationships</h3>
+      <p>Working directly with manufacturers and distributors to secure competitive pricing and dependable lead times.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p style="color:var(--text-muted); margin-top:-8px;">
+    Have a project or contract opportunity? Send us a message and we'll get back to you.
+  </p>
+  <form>
+    <input type="text" name="name" placeholder="Your name" required>
+    <input type="email" name="email" placeholder="Your email" required>
+    <textarea name="message" placeholder="How can we help?" required></textarea>
+    <button type="submit" class="btn" style="border:none; cursor:pointer;">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  &copy; <span id="year"></span> Avenza Technologies LLC. All rights reserved.
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
