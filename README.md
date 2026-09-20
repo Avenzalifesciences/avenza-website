@@ -33,9 +33,13 @@ Then open http://localhost:4173.
 Pushing to `main` publishes automatically via GitHub Pages
 (Settings → Pages → Source: `main`, folder `/`).
 
-## Before going live
+## Outstanding
 
-- [ ] Replace the placeholder email in `contact.html` (`info@example.com`)
-- [ ] Replace the placeholder phone in `contact.html` (`(000) 000-0000`)
-- [ ] Point the contact form `action` at a real handler (Formspree, etc.)
+- [ ] Point the contact form `action` at a real handler (Formspree, etc.) —
+      it currently posts to `#` and discards submissions
 - [ ] Confirm the company facts on `about.html` are current
+
+## Contact details
+
+Email `info@avenzatechnologies.com`, phone `(720) 416-7970`, Charleston SC.
+Update these in `contact.html` if they change.
