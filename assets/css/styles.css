@@ -300,22 +300,6 @@ h1, h2, h3 { letter-spacing: -0.02em; line-height: 1.25; }
 .prose > :first-child { margin-top: 0; }
 .prose h3 { margin: 28px 0 8px; font-size: 1.1rem; color: var(--text); }
 
-/* --- Definition list ---------------------------------------------------- */
-.facts {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 10px 20px;
-  font-size: 0.95rem;
-  margin: 0;
-  padding: 24px;
-  background: var(--bg-alt);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-}
-.section-alt .facts { background: var(--bg); }
-.facts dt { color: var(--text-muted); }
-.facts dd { margin: 0; font-weight: 500; }
-
 /* --- Numbered process --------------------------------------------------- */
 .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px; }
 .steps li { display: grid; grid-template-columns: 36px 1fr; gap: 16px; align-items: start; }
@@ -345,31 +329,6 @@ h1, h2, h3 { letter-spacing: -0.02em; line-height: 1.25; }
 .cta p { color: #b9c4d6; margin: 0 auto 26px; max-width: 520px; }
 .cta .btn { background: #fff; color: var(--bg-deep); }
 .cta .btn:hover { background: #dfe7f3; }
-
-/* --- Forms -------------------------------------------------------------- */
-.form { display: grid; gap: 16px; max-width: 520px; }
-.field { display: grid; gap: 6px; }
-.field label { font-size: 0.9rem; font-weight: 600; }
-.field input,
-.field textarea,
-.field select {
-  padding: 12px 14px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: var(--bg);
-  color: var(--text);
-  font: inherit;
-  width: 100%;
-}
-.field textarea { min-height: 130px; resize: vertical; }
-.field input:focus,
-.field textarea:focus,
-.field select:focus {
-  outline: 2px solid var(--accent);
-  outline-offset: 1px;
-}
-.form .btn { justify-self: start; }
-.form-note { color: var(--text-muted); font-size: 0.85rem; margin: 0; }
 
 .contact-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; }
 .contact-list strong {
