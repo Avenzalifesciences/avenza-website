@@ -28,6 +28,33 @@
     year.textContent = new Date().getFullYear();
   }
 
+  // Fade sections in as they scroll into view. Content stays visible when
+  // JavaScript or IntersectionObserver is unavailable.
+  if ('IntersectionObserver' in window) {
+    document.documentElement.classList.add('js');
+    var targets = document.querySelectorAll('.card, .feature, .steps li, .section-head, .cta, .form-card, .side-card');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          el.classList.add('in');
+          io.unobserve(el);
+          // Once revealed, drop the animation classes so hover effects use
+          // their own (faster) transitions again.
+          setTimeout(function () {
+            el.classList.remove('reveal', 'in');
+            el.style.transitionDelay = '';
+          }, 1000);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    Array.prototype.forEach.call(targets, function (el, i) {
+      el.classList.add('reveal');
+      el.style.transitionDelay = (i % 4) * 70 + 'ms';
+      io.observe(el);
+    });
+  }
+
   // Contact form: submits in the background to the Google Apps Script web app
   // (the form's `action`), which saves a row in the Google Sheet and emails a
   // notification. Without JavaScript the form posts normally and the script
