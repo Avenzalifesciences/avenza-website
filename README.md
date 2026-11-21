@@ -20,6 +20,7 @@ services.html          redirect stub   ->  /services/
 contact.html           redirect stub   ->  /contact/
 assets/css/styles.css  Shared styles (light + dark themes)
 assets/js/main.js      Mobile nav toggle, footer year, contact form submit
+google-apps-script/    Form backend (Google Sheet + email), not served
 CNAME                  Custom domain for GitHub Pages
 .nojekyll              Serve files as-is, skip Jekyll processing
 ```
@@ -56,18 +57,17 @@ follow the light/dark theme colours.
 
 ## Contact form
 
-GitHub Pages cannot process form POSTs, so the form on `/contact/` sends
-through [FormSubmit](https://formsubmit.co) to `info@avenzatechnologies.com`.
-No account or API key is needed.
+GitHub Pages cannot process form POSTs, so the form on `/contact/` sends to a
+Google Apps Script web app attached to a Google Sheet owned by the company
+Gmail account. Each submission becomes a row in the sheet's **Submissions**
+tab, and the account gets an email notification (reply goes to the visitor).
 
-- **One-time activation:** the first submission after launch makes FormSubmit
-  send an activation email to `info@avenzatechnologies.com`. Click the link in
-  it; until then, submissions are not delivered.
-- With JavaScript the form submits in the background (`assets/js/main.js`)
-  and shows a message in place; without it, it posts normally and FormSubmit
-  redirects to `/contact/thanks/`.
-- To change the receiving address, update `action` and `data-ajax` on
-  `<form id="contact-form">` in `contact/index.html`.
+- Script source and step-by-step setup: [`google-apps-script/`](google-apps-script/SETUP.md)
+- The web app URL goes in `action` on `<form id="contact-form">` in
+  `contact/index.html`. Until it is set (placeholder `GOOGLE_APPS_SCRIPT_URL`),
+  the form shows visitors the email and phone fallback instead.
+- With JavaScript the form submits in the background (`assets/js/main.js`);
+  without it, it posts normally and the script redirects to `/contact/thanks/`.
 - Spam: a hidden `_honey` field silently drops bot submissions.
 
 ## Contact details

@@ -28,10 +28,12 @@
     year.textContent = new Date().getFullYear();
   }
 
-  // Contact form: submit in the background via FormSubmit's AJAX endpoint.
-  // Without JavaScript the form still posts normally and lands on /contact/thanks/.
+  // Contact form: submits in the background to the Google Apps Script web app
+  // (the form's `action`), which saves a row in the Google Sheet and emails a
+  // notification. Without JavaScript the form posts normally and the script
+  // sends the visitor to /contact/thanks/.
   var form = document.getElementById('contact-form');
-  if (form && window.fetch && window.FormData) {
+  if (form && window.fetch && window.FormData && window.URLSearchParams) {
     var status = document.getElementById('form-status');
     var button = form.querySelector('button[type="submit"]');
 
@@ -41,43 +43,40 @@
       status.hidden = false;
     };
 
+    var fail = function () {
+      show('err', 'Sorry, your message could not be sent. Please email us at ' +
+        '<a href="mailto:info@avenzatechnologies.com">info@avenzatechnologies.com</a> or call ' +
+        '<a href="tel:+17204167970">(720) 416-7970</a>.');
+    };
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.checkValidity()) {
         form.reportValidity();
         return;
       }
+      var endpoint = form.getAttribute('action');
+      if (!/^https:\/\/script\.google\.com\//.test(endpoint)) {
+        fail(); // endpoint not configured yet
+        return;
+      }
 
-      // Collect fields; checkbox groups are joined into one readable value.
-      var data = {};
-      new FormData(form).forEach(function (value, key) {
-        if (key === '_next') return;
-        data[key] = data[key] ? data[key] + ', ' + value : value;
-      });
-      if (data._honey) return; // bot filled the hidden field
+      // URL-encoded body keeps this a "simple" request (no CORS preflight),
+      // and repeated checkbox names arrive in Apps Script as e.parameters.
+      var body = new URLSearchParams(new FormData(form));
+      body.append('_mode', 'json');
 
       button.disabled = true;
-      button.textContent = 'Sending…';
+      button.textContent = 'Sending\u2026';
 
-      fetch(form.getAttribute('data-ajax'), {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(data)
-      })
-        .then(function (res) {
-          return res.json().then(function (body) {
-            if (!res.ok || String(body.success) !== 'true') throw new Error(body.message || 'Request failed');
-          });
-        })
-        .then(function () {
+      fetch(endpoint, { method: 'POST', body: body })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (!data || data.result !== 'success') throw new Error(data && data.message);
           form.reset();
           show('ok', '<strong>Thank you!</strong> Your request has been sent. We will reply within one business day.');
         })
-        .catch(function () {
-          show('err', 'Sorry, your message could not be sent. Please email us at ' +
-            '<a href="mailto:info@avenzatechnologies.com">info@avenzatechnologies.com</a> or call ' +
-            '<a href="tel:+17204167970">(720) 416-7970</a>.');
-        })
+        .catch(fail)
         .then(function () {
           button.disabled = false;
           button.textContent = 'Send Request';
