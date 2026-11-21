@@ -64,7 +64,7 @@ tab, and the account gets an email notification (reply goes to the visitor).
 
 - Script source and step-by-step setup: [`google-apps-script/`](google-apps-script/SETUP.md)
 - The web app URL goes in `action` on `<form id="contact-form">` in
-  `contact/index.html`. Until it is set (placeholder `GOOGLE_APPS_SCRIPT_URL`),
+  `contact/index.html`. Until it is set (it was a placeholder before setup),
   the form shows visitors the email and phone fallback instead.
 - With JavaScript the form submits in the background (`assets/js/main.js`);
   without it, it posts normally and the script redirects to `/contact/thanks/`.
