@@ -3,8 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact | Avenza Technologies LLC</title>
-<meta name="description" content="Contact Avenza Technologies LLC about a contract opportunity, quote request, or supply requirement in South Carolina.">
+<title>Contact | Avenza Technologies</title>
+<meta name="description" content="Request a free consultation with Avenza Technologies for marketing strategy, websites, short-form video, social media management and sales dashboards.">
+<link rel="canonical" href="https://avenzatechnologies.com/contact/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Avenza Technologies">
+<meta property="og:title" content="Contact | Avenza Technologies">
+<meta property="og:description" content="Request a free consultation with Avenza Technologies for marketing strategy, websites, short-form video, social media management and sales dashboards.">
+<meta property="og:url" content="https://avenzatechnologies.com/contact/">
+<meta name="theme-color" content="#4f46e5">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
@@ -21,10 +28,10 @@
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">Menu</button>
     <nav class="site-nav" id="site-nav">
       <a href="/">Home</a>
-      <a href="/about/">About</a>
       <a href="/services/">Services</a>
+      <a href="/about/">About</a>
       <a href="/contact/" aria-current="page">Contact</a>
-      <a class="btn" href="/contact/">Request a Quote</a>
+      <a class="btn" href="/contact/">Free Consultation</a>
     </nav>
   </div>
 </header>
@@ -34,59 +41,164 @@
   <div class="page-hero">
     <div class="wrap">
       <span class="eyebrow">Contact</span>
-      <h1>Tell us what you need sourced</h1>
-      <p>Have a project, solicitation, or purchase order? Send the details and we will respond with pricing and availability.</p>
+      <h1>Let&rsquo;s grow your business</h1>
+      <p>Tell us about your business and what you need. We will reply within one business day with ideas and next steps. The first consultation is free.</p>
     </div>
   </div>
 
   <section class="section">
     <div class="wrap">
-      <div class="split">
+      <div class="contact-layout">
 
-        <div>
-          <h2 style="margin:0 0 16px; font-size:1.3rem;">Request a quote</h2>
-          <p style="color:var(--text-muted); margin:0 0 24px;">
-            Email us your requirement and we will come back with a written quote
-            and lead times, typically within one business day.
-          </p>
+        <div class="form-card">
+          <h2 style="margin:0 0 6px; font-size:1.35rem;">Free consultation request</h2>
+          <p class="form-note" style="margin-bottom:22px;">Fields marked <span style="color:var(--accent-2)">*</span> are required.</p>
 
-          <div class="btn-row" style="margin-bottom:28px;">
-            <a class="btn" href="mailto:info@avenzatechnologies.com?subject=Quote%20request%20%E2%80%93%20Avenza%20Technologies">Email Us</a>
+          <form id="contact-form" action="https://formsubmit.co/info@avenzatechnologies.com" method="POST" data-ajax="https://formsubmit.co/ajax/info@avenzatechnologies.com">
+            <input type="hidden" name="_subject" value="New consultation request - avenzatechnologies.com">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://avenzatechnologies.com/contact/thanks/">
+            <div class="hp-field" aria-hidden="true">
+              <label for="f-honey">Leave this field empty</label>
+              <input type="text" id="f-honey" name="_honey" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="f-name">Full name <span class="req">*</span></label>
+                <input type="text" id="f-name" name="Name" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="f-business">Business name <span class="req">*</span></label>
+                <input type="text" id="f-business" name="Business" autocomplete="organization" required>
+              </div>
+              <div class="field">
+                <label for="f-email">Email <span class="req">*</span></label>
+                <input type="email" id="f-email" name="email" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label for="f-phone">Phone</label>
+                <input type="tel" id="f-phone" name="Phone" autocomplete="tel">
+              </div>
+              <div class="field">
+                <label for="f-website">Current website <span class="hint">(leave blank if none)</span></label>
+                <input type="text" id="f-website" name="Website" inputmode="url" placeholder="www.yourbusiness.com">
+              </div>
+              <div class="field">
+                <label for="f-type">Type of business</label>
+                <select id="f-type" name="Business type">
+                  <option value="">Select one</option>
+                  <option>Retail / online shop</option>
+                  <option>Restaurant / café / food</option>
+                  <option>Salon / beauty / wellness</option>
+                  <option>Professional services</option>
+                  <option>Home services / trades</option>
+                  <option>Startup / new brand</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <fieldset class="field full">
+                <legend>What can we help with? <span class="hint">(choose all that apply)</span></legend>
+                <div class="option-grid">
+                <label class="option"><input type="checkbox" name="Services" value="Marketing strategy"> Marketing strategy</label>
+                <label class="option"><input type="checkbox" name="Services" value="Modernize my existing website"> Modernize my existing website</label>
+                <label class="option"><input type="checkbox" name="Services" value="Build a new website"> Build a new website</label>
+                <label class="option"><input type="checkbox" name="Services" value="TikTok / Reels / Shorts videos"> TikTok / Reels / Shorts videos</label>
+                <label class="option"><input type="checkbox" name="Services" value="Social media management"> Social media management</label>
+                <label class="option"><input type="checkbox" name="Services" value="Sales dashboards &amp; data visualization"> Sales dashboards &amp; data visualization</label>
+                <label class="option"><input type="checkbox" name="Services" value="Stock / inventory tracking"> Stock / inventory tracking</label>
+                <label class="option"><input type="checkbox" name="Services" value="Not sure yet, need advice"> Not sure yet, need advice</label>
+                </div>
+              </fieldset>
+
+              <div class="field">
+                <label for="f-budget">Monthly budget</label>
+                <select id="f-budget" name="Monthly budget">
+                  <option>Not sure yet</option>
+                  <option>Under $500</option>
+                  <option>$500 &ndash; $1,000</option>
+                  <option>$1,000 &ndash; $2,500</option>
+                  <option>$2,500+</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="f-source">How did you hear about us?</label>
+                <select id="f-source" name="Heard about us">
+                  <option value="">Select one</option>
+                  <option>Google search</option>
+                  <option>Instagram</option>
+                  <option>TikTok</option>
+                  <option>YouTube</option>
+                  <option>Facebook</option>
+                  <option>Referral / word of mouth</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <fieldset class="field full">
+                <legend>Best way to reach you</legend>
+                <div class="radio-row">
+                  <label class="option"><input type="radio" name="Preferred contact" value="Email" checked> Email</label>
+                  <label class="option"><input type="radio" name="Preferred contact" value="Phone call"> Phone call</label>
+                  <label class="option"><input type="radio" name="Preferred contact" value="Text message"> Text message</label>
+                </div>
+              </fieldset>
+
+              <div class="field full">
+                <label for="f-message">Tell us about your business and goals <span class="req">*</span></label>
+                <textarea id="f-message" name="Message" required placeholder="What do you sell, who are your customers, and what would you like to improve?"></textarea>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn" type="submit">Send Request</button>
+              <p class="form-note">We only use your details to reply to this request.</p>
+            </div>
+            <div class="form-status" id="form-status" role="status" aria-live="polite" hidden></div>
+          </form>
+        </div>
+
+        <aside>
+          <div class="side-card">
+            <h2>Reach us directly</h2>
+            <ul class="contact-list">
+              <li>
+                <strong>Email</strong>
+                <a href="mailto:info@avenzatechnologies.com">info@avenzatechnologies.com</a>
+              </li>
+              <li>
+                <strong>Phone</strong>
+                <a href="tel:+17204167970">(720) 416-7970</a>
+              </li>
+              <li>
+                <strong>Location</strong>
+                Charleston, South Carolina
+              </li>
+              <li>
+                <strong>Hours</strong>
+                Monday &ndash; Friday, 8:00 AM &ndash; 5:00 PM ET
+              </li>
+            </ul>
           </div>
-
-          <h3 style="font-size:1.05rem; margin:0 0 10px;">What to include</h3>
-          <p style="color:var(--text-muted); margin:0 0 12px;">
-            The more of this you can send up front, the faster we can quote:
-          </p>
-          <ul style="color:var(--text-muted); margin:0; padding-left:20px; display:grid; gap:6px;">
-            <li>Line items and quantities</li>
-            <li>Specifications, part numbers, or the solicitation document</li>
-            <li>Delivery location and required date</li>
-            <li>Your organization and a contact number</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 style="margin:0 0 20px; font-size:1.3rem;">Reach us directly</h2>
-          <ul class="contact-list">
-            <li>
-              <strong>Email</strong>
-              <a href="mailto:info@avenzatechnologies.com">info@avenzatechnologies.com</a>
-            </li>
-            <li>
-              <strong>Phone</strong>
-              <a href="tel:+17204167970">(720) 416-7970</a>
-            </li>
-            <li>
-              <strong>Location</strong>
-              Charleston, South Carolina
-            </li>
-            <li>
-              <strong>Hours</strong>
-              Monday &ndash; Friday, 8:00 AM &ndash; 5:00 PM ET
-            </li>
-          </ul>
-        </div>
+          <div class="side-card">
+            <h2>What happens next</h2>
+            <ol class="steps">
+              <li>
+                <span class="num" aria-hidden="true">1</span>
+                <div><h3>We review</h3><p>We look at your website and social accounts.</p></div>
+              </li>
+              <li>
+                <span class="num" aria-hidden="true">2</span>
+                <div><h3>We call</h3><p>A free 30-minute call to understand your goals.</p></div>
+              </li>
+              <li>
+                <span class="num" aria-hidden="true">3</span>
+                <div><h3>You get a plan</h3><p>A clear proposal with what we would do first.</p></div>
+              </li>
+            </ol>
+          </div>
+        </aside>
 
       </div>
     </div>
@@ -102,21 +214,25 @@
           <svg class="logo-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="64" rx="14" fill="var(--accent)"/><path d="M20 47 L32 18 L44 47" fill="none" stroke="var(--bg)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M25.5 38 H38.5" stroke="var(--bg)" stroke-width="5.5" stroke-linecap="round"/></svg>
           Avenza Technologies
         </a>
-        <p>Sourcing and supply partner for state government and institutional contracts.</p>
+        <p>Marketing strategy, websites, short-form video, social media management and sales insights for growing businesses.</p>
       </div>
       <div>
-        <h4>Site</h4>
+        <h4>Services</h4>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/services/">Services</a></li>
-          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/services/#strategy">Marketing Strategy</a></li>
+          <li><a href="/services/#websites">Websites</a></li>
+          <li><a href="/services/#video">Short-Form Video</a></li>
+          <li><a href="/services/#social">Social Media Management</a></li>
+          <li><a href="/services/#insights">Sales &amp; Stock Dashboards</a></li>
         </ul>
       </div>
       <div>
         <h4>Company</h4>
         <ul>
-          <li>Avenza Technologies LLC</li>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="mailto:info@avenzatechnologies.com">info@avenzatechnologies.com</a></li>
+          <li><a href="tel:+17204167970">(720) 416-7970</a></li>
           <li>Charleston, SC</li>
         </ul>
       </div>

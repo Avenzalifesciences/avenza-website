@@ -1,7 +1,9 @@
 # Avenza Technologies LLC — Website
 
-Static marketing site for Avenza Technologies LLC, a sourcing and supply
-partner for state government and institutional contracts.
+Static marketing site for Avenza Technologies LLC, a digital growth company:
+marketing strategy, website modernization and new builds, short-form video
+(TikTok, Instagram Reels, YouTube Shorts), social media management, and
+sales / stock dashboards for small and growing businesses.
 
 Live at **https://avenzatechnologies.com** (GitHub Pages).
 
@@ -11,12 +13,13 @@ Live at **https://avenzatechnologies.com** (GitHub Pages).
 index.html             Home            ->  /
 about/index.html       About           ->  /about/
 services/index.html    Services        ->  /services/
-contact/index.html     Contact         ->  /contact/
+contact/index.html     Contact         ->  /contact/   (consultation form)
+contact/thanks/        Form thank-you  ->  /contact/thanks/ (no-JS fallback)
 about.html             redirect stub   ->  /about/
 services.html          redirect stub   ->  /services/
 contact.html           redirect stub   ->  /contact/
 assets/css/styles.css  Shared styles (light + dark themes)
-assets/js/main.js      Mobile nav toggle, footer year
+assets/js/main.js      Mobile nav toggle, footer year, contact form submit
 CNAME                  Custom domain for GitHub Pages
 .nojekyll              Serve files as-is, skip Jekyll processing
 ```
@@ -48,16 +51,27 @@ Then open http://localhost:4173.
 Pushing to `main` publishes automatically via GitHub Pages
 (Settings → Pages → Source: `main`, folder `/`).
 
-## Outstanding
+Illustrations are inline SVGs inside each page (not image files) so they
+follow the light/dark theme colours.
 
-- [ ] Confirm the company facts on `about.html` are current
+## Contact form
 
-The contact page has no form. Static hosting cannot process form POSTs
-(GitHub Pages returns 405), so the page uses direct `mailto:` and `tel:`
-links instead. If a form is ever needed, it requires a third-party handler
-such as Formspree or FormSubmit.
+GitHub Pages cannot process form POSTs, so the form on `/contact/` sends
+through [FormSubmit](https://formsubmit.co) to `info@avenzatechnologies.com`.
+No account or API key is needed.
+
+- **One-time activation:** the first submission after launch makes FormSubmit
+  send an activation email to `info@avenzatechnologies.com`. Click the link in
+  it; until then, submissions are not delivered.
+- With JavaScript the form submits in the background (`assets/js/main.js`)
+  and shows a message in place; without it, it posts normally and FormSubmit
+  redirects to `/contact/thanks/`.
+- To change the receiving address, update `action` and `data-ajax` on
+  `<form id="contact-form">` in `contact/index.html`.
+- Spam: a hidden `_honey` field silently drops bot submissions.
 
 ## Contact details
 
 Email `info@avenzatechnologies.com`, phone `(720) 416-7970`, Charleston SC.
-Update these in `contact.html` if they change.
+Update these in `contact/index.html`, the footer of every page, and the
+error message in `assets/js/main.js` if they change.
