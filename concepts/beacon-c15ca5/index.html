@@ -390,7 +390,7 @@
   body:not(.menu-page) .menu-layout{grid-template-columns:1fr}
   /* Menu page: only the menu between header and footer */
   body.menu-page main > :not(#menu):not(.modal){display:none!important}
-  body.menu-page #menu{padding-top:40px;min-height:calc(100vh - 73px)}
+  body.menu-page #menu{padding-top:40px;min-height:640px}
   .map iframe{pointer-events:none}
   .map.active iframe{pointer-events:auto}
   .map-hint{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);z-index:2;background:rgba(47,44,38,.82);color:#F4EFE5;font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px;pointer-events:none;transition:opacity .2s}
@@ -1231,11 +1231,11 @@
     };
     send({type:'open'});
     const t0=Date.now(), menus=new Set(), sections=new Set();
-    const noteMenu=()=>{ const m=location.hash.match(/^#\/menu(?:\/([a-z0-9-]+))?/); if(m) menus.add(m[1]||'overview'); };
+    const noteMenu=()=>{ const m=location.hash.match(/^#\/(menu|about|gifts)(?:\/([a-z0-9-]+))?/); if(m) menus.add(m[1]==='menu'?(m[2]||'overview'):m[1]+' page'); };
     noteMenu(); window.addEventListener('hashchange',noteMenu);
     if('IntersectionObserver' in window){
       const io=new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting) sections.add(en.target.id); }),{threshold:.25});
-      ['menu','events','jordan','shop','visit','instagram'].forEach(id=>{ const el=document.getElementById(id); if(el) io.observe(el); });
+      ['menu','events','jordan','shop','visit','instagram','signatures','finder','story','beans','archive','drops','gifts'].forEach(id=>{ const el=document.getElementById(id); if(el) io.observe(el); });
     }
     let sent=false;
     const leave=()=>{ if(sent) return; sent=true; send({type:'left',seconds:Math.round((Date.now()-t0)/1000),menus:[...menus].join(', '),sections:[...sections].join(', ')}); };
