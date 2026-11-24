@@ -1217,6 +1217,8 @@
       me=localStorage.getItem('avz-me')==='1';
     }catch(_){}
     if(me) console.info('Visit tracking is off in this browser (?me).');
+    // Only the published site counts: local files and test servers never send visits.
+    if(!/(^|\.)avenzatechnologies\.com$/.test(location.hostname)) return;
     if(me||!/^https:\/\/script\.google\.com\//.test(TRACKER_URL)) return;
     let vid='anon';
     try{ vid=localStorage.getItem('avz-vid')||''; if(!vid){ vid=Math.random().toString(36).slice(2,10); localStorage.setItem('avz-vid',vid); } }catch(_){}
