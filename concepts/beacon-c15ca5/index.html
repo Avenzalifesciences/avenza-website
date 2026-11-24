@@ -498,11 +498,11 @@
   .order-bar{display:none}
   @media (max-width:960px){
     .nav-right .btn{display:none}
-    .order-bar{display:block;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:45}
-    .order-bar button{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:999px;padding:16px 20px;background:var(--ink-deep);color:#fff;font:600 16.5px var(--sans);cursor:pointer;box-shadow:0 14px 30px -8px rgba(47,44,38,.55)}
+    .order-bar{display:block;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:45}
+    .order-bar button{display:flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:12px 18px;background:var(--ink-deep);color:#fff;font:600 15px var(--sans);cursor:pointer;box-shadow:0 10px 24px -6px rgba(47,44,38,.55)}
     .order-bar button.has-items{background:#4F7A45}
     .cart-fab{display:none!important}
-    body{padding-bottom:88px}
+    body{padding-bottom:76px}
     .toast{bottom:96px}
   }
 </style>
@@ -963,7 +963,7 @@
   </aside>
 </div>
 
-<div class="order-bar" id="orderBar"><button type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span>Order ahead for pickup</span></button></div>
+<div class="order-bar" id="orderBar"><button type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span>Order ahead</span></button></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
@@ -1310,7 +1310,7 @@
     const btn=bar.querySelector('button'), label=btn.querySelector('span');
     const count=document.getElementById('cartCount'), total=document.getElementById('cartFabTotal');
     const sync=()=>{ const n=+count.textContent||0;
-      label.textContent=n?'View your order · '+n+' · '+total.textContent:'Order ahead for pickup';
+      label.textContent=n?'Your order · '+n+' · '+total.textContent:'Order ahead';
       btn.classList.toggle('has-items',n>0); };
     new MutationObserver(sync).observe(count,{childList:true,characterData:true,subtree:true});
     new MutationObserver(sync).observe(total,{childList:true,characterData:true,subtree:true});
