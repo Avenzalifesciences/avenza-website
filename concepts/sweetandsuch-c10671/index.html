@@ -254,6 +254,35 @@
   body[data-page="menu"] main > [data-page]:not([data-page="menu"]),
   body[data-page="about"] main > [data-page]:not([data-page="about"]),
   body[data-page="visit"] main > [data-page]:not([data-page="visit"]){display:none!important}
+
+  /* Google rating + reviews panel */
+  .rating-chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 16px;font:600 14.5px var(--sans);color:var(--ink);cursor:pointer;margin-left:8px}
+  .rating-chip:hover{border-color:var(--gold)}
+  .rating-chip b{color:var(--emerald)}
+  .stars{color:#E3A92B;letter-spacing:1px}
+  .stars .half{position:relative;display:inline-block}
+  .stars .half .bg{color:#D9D3C6}
+  .stars .half .fg{position:absolute;left:0;top:0;width:60%;overflow:hidden;white-space:nowrap;color:#E3A92B}
+  .hero .rating-chip{margin:12px 0 0;display:flex;width:max-content}
+  button.stat{font:inherit;cursor:pointer;width:100%;transition:border-color .2s ease,transform .2s ease}
+  button.stat:hover{border-color:var(--gold);transform:translateY(-2px)}
+  .stat .more-link{display:block;margin-top:6px;font-size:13px;color:var(--gold);font-weight:700}
+  .reviews .sheet{width:min(560px,100%);max-height:86vh;overflow:auto;padding:30px 30px 26px}
+  .rv-top{display:flex;align-items:center;gap:22px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+  .rv-score{font-family:var(--serif);font-size:64px;line-height:1;color:var(--emerald)}
+  .rv-top .stars{font-size:22px}
+  .rv-top small{display:block;color:var(--muted);font-size:14px;margin-top:4px}
+  .rv-love{margin:20px 0 6px}
+  .rv-love h4{font-family:var(--sans);font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+  .rv-love ul{list-style:none;padding:0;margin:0;display:grid;gap:9px}
+  .rv-love li{display:flex;gap:10px;align-items:flex-start;font-size:15.5px}
+  .rv-love li::before{content:"✓";color:var(--emerald);font-weight:700}
+  .rv-src{font-size:12.5px;color:var(--muted);margin:10px 0 0}
+  .rv-list{display:grid;gap:12px;margin-top:18px}
+  .rv-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+  .rv-card header{display:flex;justify-content:space-between;gap:10px;font-size:14px}
+  .rv-card p{margin:6px 0 0;font-size:15px;color:var(--ink)}
+  .rv-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
   [hidden]{display:none!important}
 
   @media (min-width:961px){ .mnav{display:none!important} }
@@ -327,7 +356,7 @@
         <h1 style="margin-top:14px">Your late-night <em>sweet spot.</em></h1>
         <p class="lede">Fresh crepes, bubble waffles and Dubai chocolate, made fresh to order and served until midnight, Monday to Saturday. After dinner, after class, or just because.</p>
         <div class="cta-row"><a class="btn btn-emerald" href="#/menu">See the menu</a></div>
-        <span class="status"><span class="dot" id="dot"></span><span id="statusText">Open today</span></span>
+        <span class="status"><span class="dot" id="dot"></span><span id="statusText">Open today</span></span><button type="button" class="rating-chip" data-reviews><span class="stars" aria-hidden="true">★★★★<span class="half"><span class="bg">★</span><span class="fg">★</span></span></span> <b>4.7</b> · 135 Google reviews</button>
       </div>
       <figure class="hero-photo"><img data-img="counter" alt="The marble dessert counter and emerald seating inside Sweet &amp; Such"><div class="badge"><b>Till midnight</b><small>Mon–Sat · Sun till 10pm</small></div></figure>
     </div>
@@ -382,7 +411,7 @@
   <section id="loved" data-page="home" style="padding-bottom:40px">
     <div class="wrap">
       <div class="stats">
-        <div class="stat"><b>4.8★</b><span>on DoorDash · 50+ ratings</span></div>
+        <button type="button" class="stat" data-reviews><b>4.7★</b><span>135 Google reviews</span><span class="more-link">Read what guests say →</span></button>
         <div class="stat"><b>40+</b><span>treats &amp; drinks on the menu</span></div>
         <div class="stat"><b>12am</b><span>open late, Monday to Saturday</span></div>
       </div>
@@ -426,6 +455,7 @@
         <div class="eyebrow">Visit</div>
         <h2>Come find your <em>new favorite.</em></h2>
         <p class="addr"><b>2101 Main St, Suite H</b><br>Columbia, SC 29201</p>
+        <button type="button" class="rating-chip" data-reviews style="margin:14px 0 0"><span class="stars" aria-hidden="true">★★★★<span class="half"><span class="bg">★</span><span class="fg">★</span></span></span> <b>4.7</b> · 135 Google reviews</button>
         <table class="hours" id="hours" aria-label="Opening hours">
           <tr data-d="1"><td>Monday</td><td>2:00pm – 12:00am</td></tr>
           <tr data-d="2"><td>Tuesday</td><td>2:00pm – 12:00am</td></tr>
@@ -458,6 +488,33 @@
       <div class="ig-foot"><a class="btn btn-emerald" href="https://www.instagram.com/sweetand.such/" target="_blank" rel="noopener">Follow @sweetand.such</a><span class="ig-note">Live feed: the 6 latest posts appear here automatically (shown here with recent posts)</span></div>
     </div>
   </section>
+
+  <div class="modal reviews" id="reviewsModal" role="dialog" aria-modal="true" aria-labelledby="rvTitle" hidden>
+    <div class="sheet">
+      <button class="x" data-close aria-label="Close">✕</button>
+      <div class="eyebrow">Google reviews</div>
+      <h3 id="rvTitle">Loved across Columbia</h3>
+      <div class="rv-top"><span class="rv-score">4.7</span><div><span class="stars" style="font-size:22px" aria-hidden="true">★★★★<span class="half"><span class="bg">★</span><span class="fg">★</span></span></span><small>135 reviews on Google</small></div></div>
+      <div class="rv-love">
+        <h4>What guests love</h4>
+        <ul>
+          <li>Delicious crepes, bubble waffles and milkshakes</li>
+          <li>Fresh, high-quality ingredients</li>
+          <li>Beautiful presentation</li>
+          <li>A welcoming atmosphere and stylish décor</li>
+          <li>Friendly staff</li>
+          <li>Convenient late-night hours</li>
+          <li>Reasonable prices for the quality and portion size</li>
+        </ul>
+        <p class="rv-src">Based on Google's summary of guest reviews.</p>
+      </div>
+      <div class="rv-list" id="rvList" hidden></div>
+      <div class="rv-actions">
+        <a class="btn btn-emerald" href="https://www.google.com/maps/search/?api=1&amp;query=Sweet+%26+Such+Dessert+caf%C3%A9+2101+Main+St+Columbia+SC" target="_blank" rel="noopener">See all 135 reviews on Google</a>
+        <a class="btn btn-line" href="#/menu" data-close>See the menu</a>
+      </div>
+    </div>
+  </div>
 
   <div class="modal" id="demoModal" role="dialog" aria-modal="true" aria-labelledby="dTitle" hidden>
     <div class="sheet">
@@ -714,6 +771,22 @@ const IMG={"waffle": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAY
     if(h>=H[d][0]&&h<H[d][1]){ txt.textContent='Open now · until '+fmt(H[d][1]); return; }
     dot.classList.add('closed');
     txt.textContent=h<H[d][0]?'Closed now · opens today at '+fmt(H[d][0]):'Closed now · opens tomorrow at '+fmt(H[(d+1)%7][0]);
+  })();
+
+  // ===== Google reviews panel =====
+  // Real reviews go in REVIEWS as [name, stars, 'YYYY-MM-DD', text]; they show highest rating first, then newest.
+  const REVIEWS=[];
+  (function(){
+    const modal=document.getElementById('reviewsModal'), list=document.getElementById('rvList');
+    const sorted=REVIEWS.slice().sort((x,y)=>y[1]-x[1]||(y[2]>x[2]?1:-1));
+    if(sorted.length){
+      list.hidden=false;
+      list.innerHTML=sorted.map(([n,s,d,txt])=>'<article class="rv-card"><header><b>'+esc(n)+'</b><span class="stars">'+'★'.repeat(s)+'</span></header><p>'+esc(txt)+'</p><small style="color:var(--muted)">'+esc(new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'short',year:'numeric'}))+'</small></article>').join('');
+    }
+    const open=()=>{ modal.hidden=false; };
+    $$('[data-reviews]').forEach(b=>b.addEventListener('click',open));
+    modal.addEventListener('click',e=>{ if(e.target===modal||e.target.closest('[data-close]')) modal.hidden=true; });
+    document.addEventListener('keydown',e=>{ if(e.key==='Escape') modal.hidden=true; });
   })();
 
 
